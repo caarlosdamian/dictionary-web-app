@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-    Hello
+    <span data-testid='label'>Hello</span>
     </div>
   )
 }
