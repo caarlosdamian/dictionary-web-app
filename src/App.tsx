@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { useState } from "react";
+import { useQuery } from "react-query";
+import { Header } from "./components/header/Header";
+import { fetchData } from "./services";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-    <span data-testid='label'>Hello</span>
-    </div>
-  )
+    <section className="App">
+      <Header />
+    </section>
+  );
 }
 
-export default App
+export default App;
