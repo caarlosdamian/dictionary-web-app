@@ -1,9 +1,10 @@
-@import '../../tokens/index.scss';
+@import "../../tokens/index.scss";
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 
   .right-container {
     display: flex;
@@ -23,10 +24,3 @@
     height: 32px;
   }
 }
-
-
-// * {
-//   font-family: 'Inconsolata', monospace;
-//   // font-family: 'Inter', sans-serif;
-//   // font-family: 'Lora', serif;
-// }
