@@ -1,9 +1,15 @@
+@import "./../../tokens/index.scss";
+
 .select-container {
   display: flex;
   gap: 16px;
   justify-self: center;
   align-self: center;
   transition: all ease 1s;
+  cursor: pointer;
+  @include for-size("tablet-portrait-up") {
+    gap: 18px;
+  }
 
   .select-label {
     font-style: normal;
@@ -11,6 +17,9 @@
     font-size: 18px;
     line-height: 24px;
     color: #2d2d2d;
+    &.dark {
+      color: #ffffff;
+    }
   }
 
   .select-wrapper {
@@ -22,12 +31,16 @@
     height: 152px;
     padding: 24px;
     top: 50px;
-    left: 10px;
+    right: 80px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     gap: 16px;
+    &.dark {
+      background: #1f1f1f;
+      box-shadow: 0px 5px 30px #a445ed;
+    }
 
     .select-option {
       font-weight: 700;
@@ -35,6 +48,9 @@
       line-height: 24px;
       color: #2d2d2d;
       cursor: pointer;
+      &.dark {
+        color: #ffffff;
+      }
       &:hover {
         color: #a445ed;
       }

@@ -13,7 +13,7 @@ export const Select = () => {
     dispatch(toggleSelectedStyle({ option: item.name, value: item.value }));
   };
 
-  const { selectedOption, value } = useAppSelector(
+  const { selectedOption, value, dark } = useAppSelector(
     (state: RootState) => state.theme
   );
   return (
@@ -21,13 +21,13 @@ export const Select = () => {
       className={`select-container ${""}`}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <span className={`select-label ${value}`}>{selectedOption}</span>
+      <span className={`select-label ${value} ${dark && 'dark'}`}>{selectedOption}</span>
       {isOpen && (
-        <div className="select-wrapper">
+        <div className={`select-wrapper ${dark && 'dark'}`}>
           {styleOptions.map((item: any) => (
             <span
               key={item.id}
-              className={`select-option ${item.value}`}
+              className={`select-option ${item.value} ${dark && 'dark'}`}
               onClick={() => handleSelect(item)}
             >
               {item.name}
