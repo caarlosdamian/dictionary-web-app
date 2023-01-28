@@ -1,0 +1,56 @@
+@import "../../tokens/index.scss";
+
+.text-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f4f4;
+  border-radius: 16px;
+  padding: 14px 24px;
+  width: 100%;
+  border: 1px solid transparent;
+
+  &.active {
+    border: 1px solid $lavender-indigo;
+  }
+  &.error {
+    border: 1px solid #ff5252;
+  }
+
+  @include for-size("tablet-portrait-up") {
+    padding: 22px 24px;
+  }
+  @include for-size("desktop-up") {
+    padding: 20px 24px;
+  }
+  &.dark {
+    background: #1f1f1f;
+  }
+  .input-text {
+    border: none;
+    outline: none;
+    background: #f4f4f4;
+    padding: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2d2d2d;
+    flex-basis: 90%;
+    @include for-size("tablet-portrait-up") {
+      font-size: 20px;
+      line-height: 21px;
+    }
+    @include for-size("desktop-up") {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    &.dark {
+      background: #1f1f1f;
+      color: #ffffff;
+    }
+  }
+
+  .search-icon{
+    cursor: pointer;
+  }
+}
