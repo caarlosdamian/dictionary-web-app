@@ -8,7 +8,7 @@
 
   &.dark {
     path {
-      stroke: #a445ed;
+      stroke: $lavender-indigo;
     }
   }
 
@@ -30,7 +30,7 @@
 
   .divider-line {
     width: 1px;
-    background-color: #e9e9e9;
+    background-color: $bright-gray;
     height: 32px;
   }
 }

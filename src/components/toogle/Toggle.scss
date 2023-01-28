@@ -1,5 +1,7 @@
+@import "../../tokens/index.scss";
+
 .toggle-container {
-  background: #757575;
+  background: $sonic-silver;
   border-radius: 10px;
   width: 40px;
   height: 20px;
@@ -10,7 +12,7 @@
 
   cursor: pointer;
   &.dark {
-    background-color: #a445ed;
+    background-color: $lavender-indigo;
 
     .toggle-circle {
       transform: translateX(140%);
@@ -20,7 +22,7 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #ffffff;
+    background: $white;
     transition: all ease 0.5s;
   }
 }

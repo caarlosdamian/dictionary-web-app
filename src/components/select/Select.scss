@@ -16,9 +16,9 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
-    color: #2d2d2d;
+    color: $charleston-green;
     &.dark {
-      color: #ffffff;
+      color: $white;
     }
   }
 
@@ -38,21 +38,21 @@
     flex-direction: column;
     gap: 16px;
     &.dark {
-      background: #1f1f1f;
-      box-shadow: 0px 5px 30px #a445ed;
+      background: $eerie-black;
+      box-shadow: 0px 5px 30px $lavender-indigo;
     }
 
     .select-option {
       font-weight: 700;
       font-size: 18px;
       line-height: 24px;
-      color: #2d2d2d;
+      color: $charleston-green;
       cursor: pointer;
       &.dark {
-        color: #ffffff;
+        color: $white;
       }
       &:hover {
-        color: #a445ed;
+        color: $lavender-indigo;
       }
     }
   }
