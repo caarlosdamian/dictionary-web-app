@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import { useAppDispatch } from "../redux/hooks";
+import { setData } from "../redux/slices/searchSlice";
 import { fetchData } from "../services";
 
 export const useSearch = () => {
@@ -12,6 +14,7 @@ export const useSearch = () => {
       enabled: false,
     }
   );
+  const dispatch = useAppDispatch();
 
   const handleSearch = (e: any) => {
     e.preventDefault();
@@ -26,6 +29,10 @@ export const useSearch = () => {
   useEffect(() => {
     setEmptyString(false);
   }, [search]);
+
+  useEffect(() => {
+    dispatch(setData(data));
+  }, [data]);
 
   return {
     handleSearch,
