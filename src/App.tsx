@@ -7,11 +7,10 @@ import { TextInput } from "./components/textInput/TextInput";
 
 function App() {
   const { dark } = useAppSelector((state: RootState) => state.theme);
-
   return (
     <section className={`App ${dark && "dark"}`}>
       <Header />
-      <TextInput/>
+      <TextInput />
     </section>
   );
 }

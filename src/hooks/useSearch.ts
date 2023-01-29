@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { fetchData } from "../services";
 
 export const useSearch = () => {
   const [search, setSearch] = useState("");
-  const { isFetched, isLoading, data, refetch } = useQuery(
+  const [emptyString, setEmptyString] = useState(false);
+  const { isFetched, isLoading, data, refetch, isError, isSuccess } = useQuery(
     ["search", search],
     () => fetchData(search),
     {
@@ -14,8 +15,17 @@ export const useSearch = () => {
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    refetch();
+
+    if (search.length) {
+      refetch();
+    } else {
+      setEmptyString(true);
+    }
   };
+
+  useEffect(() => {
+    setEmptyString(false);
+  }, [search]);
 
   return {
     handleSearch,
@@ -24,5 +34,8 @@ export const useSearch = () => {
     data,
     setSearch,
     search,
+    isSuccess,
+    isError,
+    emptyString,
   };
 };

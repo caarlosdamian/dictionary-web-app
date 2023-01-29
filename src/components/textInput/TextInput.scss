@@ -1,5 +1,20 @@
 @import "../../tokens/index.scss";
 
+.input-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+
+.error-label {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff5252;
+}
 .text-input-container {
   display: flex;
   align-items: center;
@@ -50,7 +65,7 @@
     }
   }
 
-  .search-icon{
+  .search-icon {
     cursor: pointer;
   }
 }
