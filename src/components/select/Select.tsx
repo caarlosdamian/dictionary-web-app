@@ -21,13 +21,15 @@ export const Select = () => {
       className={`select-container ${""}`}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <span className={`select-label ${value} ${dark && 'dark'}`}>{selectedOption}</span>
+      <span className={`select-label ${value} ${dark && "dark"}`}>
+        {selectedOption}
+      </span>
       {isOpen && (
-        <div className={`select-wrapper ${dark && 'dark'}`}>
+        <div className={`select-wrapper ${dark && "dark"}`}>
           {styleOptions.map((item: any) => (
             <span
               key={item.id}
-              className={`select-option ${item.value} ${dark && 'dark'}`}
+              className={`select-option ${item.value} ${dark && "dark"}`}
               onClick={() => handleSelect(item)}
             >
               {item.name}
