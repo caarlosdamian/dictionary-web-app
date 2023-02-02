@@ -7,13 +7,10 @@ import { fetchData } from "../services";
 export const useSearch = () => {
   const [search, setSearch] = useState("");
   const [emptyString, setEmptyString] = useState(false);
-  const { isFetched, isLoading, data, refetch, isError, isSuccess } = useQuery(
-    ["search", search],
-    () => fetchData(search),
-    {
+  const { isFetched, isLoading, data, refetch, isError, isSuccess, status } =
+    useQuery(["search", search], () => fetchData(search), {
       enabled: false,
-    }
-  );
+    });
   const dispatch = useAppDispatch();
 
   const handleSearch = (e: any) => {
@@ -31,7 +28,13 @@ export const useSearch = () => {
   }, [search]);
 
   useEffect(() => {
-    dispatch(setData(data));
+    if (data === undefined) {
+      return;
+    } else if (Array.isArray(data)) {
+      dispatch(setData(data));
+    } else {
+      dispatch(setData([data]));
+    }
   }, [data]);
 
   return {
