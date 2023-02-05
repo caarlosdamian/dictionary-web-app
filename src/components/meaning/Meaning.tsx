@@ -3,34 +3,69 @@ import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import "./Meaning.scss";
 
-export const Meaning = ({ definitions }: any) => {
+export const Meaning = ({ definitions, header, synonyms }: any) => {
   const {
     theme: { dark, value },
-    search: { data },
   } = useAppSelector((state: RootState) => state);
 
-  console.log(definitions);
   return (
-    <div className="meaning">
-      <span className={`meaning-title ${value}`}>Meaning</span>
-      <div className="meaning-list">
-        <div className="meaning-list-inner">
-          {definitions?.map((item: any) => (
-            <div key={item.definition} className="meaning-list-inner-wrapper">
-              <div className="meaning-list-inner-wrapper-circle">
-                <div className="meaning-list-inner-wrapper-circle-inner"></div>
-              </div>
-              <span
-                className={`meaning-list-inner-wrapper-item ${value} ${
-                  dark ? "dark" : ""
-                }`}
+    <div className="meaning-container">
+      <div className="meaning-container-top">
+        <span
+          className={`meaning-container-top-title ${value} ${
+            dark ? "dark" : ""
+          }`}
+        >
+          {header}
+        </span>
+        <div className="meaning-container-top-line"></div>
+      </div>
+      <div className="meaning-container-bottom">
+        <span className={`meaning-container-bottom-title ${value}`}>
+          Meaning
+        </span>
+        <div className="meaning-container-bottom-list">
+          <div className="meaning-container-bottom-list-inner">
+            {definitions?.map((item: any) => (
+              <div
+                key={item.definition}
+                className="meaning-container-bottom-list-inner-wrapper"
               >
-                {item.definition}
-              </span>
-            </div>
-          ))}
+                <div className="meaning-container-bottom-list-inner-wrapper-circle">
+                  <div className="meaning-container-bottom-list-inner-wrapper-circle-inner"></div>
+                </div>
+                <span
+                  className={`meaning-container-bottom-list-inner-wrapper-item ${value} ${
+                    dark ? "dark" : ""
+                  }`}
+                >
+                  {item.definition}
+                </span>
+              </div>
+            ))}
+            {definitions.map(
+              (item: any) =>
+                item.example !== undefined && (
+                  <span
+                    className={`meaning-container-bottom-list-inner-example ${value}`}
+                  >{`"${item.example}"`}</span>
+                )
+            )}
+          </div>
         </div>
       </div>
+      {synonyms.length !== 0 && (
+        <div className="meaning-container-synonyms">
+          <span className={`meaning-container-synonyms-header ${value}`}>
+            Synonyms
+          </span>
+          {synonyms.map((item: any) => (
+            <span className={`meaning-container-synonyms-item ${value}`}>
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

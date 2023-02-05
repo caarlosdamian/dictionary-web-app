@@ -12,7 +12,6 @@ export const Details = () => {
   } = useAppSelector((state: RootState) => state);
   const { word, phonetic, phonetics, meanings } = data[0];
   const { audio } = phonetics[0];
-  const { definitions } = meanings[0];
   const newAudio = new Audio(audio);
 
   return (
@@ -39,48 +38,13 @@ export const Details = () => {
           />
         </div>
       </div>
-      <div className="details-middle-inner-container">
-        <div className="details-middle-inner-container-top"> // this will be on the meaning component 
-          <span
-            className={`details-middle-inner-container-top-title ${value} ${
-              dark ? "dark" : ""
-            }`}
-          >
-            noun 
-          </span>
-          <div className="details-middle-inner-container-top-line"></div>
-        </div>
-        {/* <div className="details-middle-inner-container-bottom">
-          <span
-            className={`details-middle-inner-container-bottom-title ${value}`}
-          >
-            Meaning
-          </span>
-          <div className="details-middle-inner-container-bottom-list">
-            <div className="details-middle-inner-container-bottom-list-inner">
-              {definitions?.map((item: any) => (
-                <div
-                  key={item.definition}
-                  className="details-middle-inner-container-bottom-list-inner-wrapper"
-                >
-                  <div className="details-middle-inner-container-bottom-list-inner-wrapper-circle">
-                    <div className="details-middle-inner-container-bottom-list-inner-wrapper-circle-inner"></div>
-                  </div>
-                  <span
-                    className={`details-middle-inner-container-bottom-list-inner-wrapper-item ${value} ${
-                      dark ? "dark" : ""
-                    }`}
-                  >
-                    {item.definition}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-
-        <Meaning definitions={definitions} />
-      </div>
+      {meanings.map((item: any) => (
+        <Meaning
+          header={item.partOfSpeech}
+          definitions={item.definitions}
+          synonyms={item.synonyms}
+        />
+      ))}
 
       <div className="details-mid-bottom-inner-container">
         <div className="details-mid-bottom-inner-container-top">
