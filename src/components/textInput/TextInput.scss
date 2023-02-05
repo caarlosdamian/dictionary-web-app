@@ -46,10 +46,10 @@
     outline: none;
     background: #f4f4f4;
     padding: 0;
-    font-weight: 700;
+    font-weight: $font-weight-700;
     font-size: 16px;
     line-height: 19px;
-    color: #2d2d2d;
+    color: $charleston-green;
     flex-basis: 90%;
     @include for-size("tablet-portrait-up") {
       font-size: 20px;
@@ -61,7 +61,7 @@
     }
     &.dark {
       background: #1f1f1f;
-      color: #ffffff;
+      color: $white;
     }
   }
 

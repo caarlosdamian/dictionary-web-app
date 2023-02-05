@@ -26,10 +26,10 @@
       gap: 8px;
 
       &-title {
-        font-weight: 700;
+        font-weight: $font-weight-700;
         font-size: 32px;
         line-height: 39px;
-        color: #2d2d2d;
+        color: $charleston-green;
 
         @include for-size("tablet-portrait-up") {
           font-size: 64px;
@@ -42,18 +42,18 @@
         }
 
         &.dark {
-          color: white;
+          color: $white;
         }
       }
 
       &-subtitle {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 24px;
-        color: #a445ed;
+        font-weight: $font-weight-400;
+        font-size: $font-size-18;
+        line-height: $line-height-24;
+        color: $lavender-indigo;
 
         @include for-size("tablet-portrait-up") {
-          font-size: 24px;
+          font-size: $font-size-24;
           line-height: 29px;
         }
       }
@@ -85,30 +85,30 @@
     }
 
     &-line {
-      background: #e9e9e9;
+      background: $bright-gray;
       height: 1px;
       width: 100%;
-      margin-bottom: 24px;
+      margin-bottom: $spacing-24;
 
       &.dark {
-        background: #3a3a3a;
+        background: $black-olive;
       }
     }
 
     &-header {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 18px;
+      font-weight: $font-weight-400;
+      font-size: $font-size-14;
+      line-height: $line-height-18;
       text-decoration-line: underline;
-      color: #757575;
+      color: $sonic-silver;
 
       @include for-size("tablet-portrait-up") {
-        font-size: 14px;
-        line-height: 15px;
+        font-size: $font-size-14;
+        line-height: $line-height-15;
       }
       @include for-size("desktop-up") {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: $font-size-14;
+        line-height: $line-height-18;
       }
     }
 
@@ -125,19 +125,19 @@
       }
 
       &-link {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 15px;
+        font-weight: $font-weight-400;
+        font-size: $font-size-14;
+        line-height: $line-height-15;
         text-decoration-line: underline;
-        color: #2d2d2d;
+        color: $charleston-green;
 
         @include for-size("tablet-portrait-up") {
-          font-size: 14px;
-          line-height: 15px;
+          font-size: $font-size-14;
+          line-height: $line-height-15;
         }
 
         &.dark {
-          color: #ffffff;
+          color: $white;
         }
       }
     }
