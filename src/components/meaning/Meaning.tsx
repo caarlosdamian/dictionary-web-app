@@ -18,7 +18,9 @@ export const Meaning = ({ definitions, header, synonyms }: any) => {
         >
           {header}
         </span>
-        <div className="meaning-container-top-line"></div>
+        <div className={`meaning-container-top-line ${
+            dark ? "dark" : ""
+          }`}></div>
       </div>
       <div className="meaning-container-bottom">
         <span className={`meaning-container-bottom-title ${value}`}>
@@ -47,6 +49,7 @@ export const Meaning = ({ definitions, header, synonyms }: any) => {
               (item: any) =>
                 item.example !== undefined && (
                   <span
+                  key={item.example}
                     className={`meaning-container-bottom-list-inner-example ${value}`}
                   >{`"${item.example}"`}</span>
                 )

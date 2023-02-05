@@ -45,4 +45,42 @@
     }
   }
 
+  .details-bottom-inner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &-line {
+      background: #e9e9e9;
+      height: 1px;
+      width: 100%;
+      margin-bottom: 24px;
+      &.dark {
+        background: #3a3a3a;
+      }
+    }
+    &-header {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      text-decoration-line: underline;
+      color: #757575;
+    }
+    &-link-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      &-link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 15px;
+        text-decoration-line: underline;
+        color: #2d2d2d;
+
+        &.dark {
+          color: #ffffff;
+        }
+      }
+    }
+  }
 }

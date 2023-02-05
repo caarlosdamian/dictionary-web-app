@@ -2,6 +2,7 @@ import React from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import play from "../../assets/images/icon-play.svg";
+import url from "../../assets/images/icon-new-window.svg";
 import "./Details.scss";
 import { Meaning } from "../meaning/Meaning";
 
@@ -10,7 +11,7 @@ export const Details = () => {
     theme: { dark, value },
     search: { data },
   } = useAppSelector((state: RootState) => state);
-  const { word, phonetic, phonetics, meanings } = data[0];
+  const { word, phonetic, phonetics, meanings, sourceUrls } = data[0];
   const { audio } = phonetics[0];
   const newAudio = new Audio(audio);
 
@@ -38,22 +39,45 @@ export const Details = () => {
           />
         </div>
       </div>
-      {meanings.map((item: any) => (
+      {meanings.map((item: any, index: any) => (
         <Meaning
+          key={index}
           header={item.partOfSpeech}
           definitions={item.definitions}
           synonyms={item.synonyms}
         />
       ))}
-
-      <div className="details-mid-bottom-inner-container">
-        <div className="details-mid-bottom-inner-container-top">
-          <span className="details-mid-bottom-inner-container-title"></span>
-          <span className="details-mid-bottom-inner-container-subtitle"></span>
-        </div>
-        <div className="details-mid-bottom-inner-container-bottom"></div>
+      <div className="details-bottom-inner-container">
+        <div
+          className={`details-bottom-inner-container-line ${
+            dark ? "dark" : ""
+          }`}
+        ></div>
+        <span className={`details-bottom-inner-container-header ${value}`}>
+          Source
+        </span>
+        {sourceUrls.map((item: any) => (
+          <div
+            key={item}
+            className="details-bottom-inner-container-link-container"
+          >
+            <a
+              href={item}
+              target="_blank"
+              className={`details-bottom-inner-container-link-container-link ${value} ${
+                dark ? "dark" : ""
+              }`}
+            >
+              {item}
+            </a>
+            <img
+              src={url}
+              alt="url"
+              className="details-bottom-inner-container-link-container-img"
+            />
+          </div>
+        ))}
       </div>
-      <div className="details-bottom-inner-container"></div>
     </div>
   );
 };
