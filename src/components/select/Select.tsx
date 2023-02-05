@@ -37,7 +37,7 @@ export const Select = () => {
           ))}
         </div>
       )}
-      <img src={Arrow} />
+      <img src={Arrow}   alt="arrow" />
     </div>
   );
 };

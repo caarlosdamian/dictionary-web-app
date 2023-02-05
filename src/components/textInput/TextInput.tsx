@@ -17,8 +17,6 @@ export const TextInput = () => {
       >
         <input
           type="text"
-          name=""
-          id=""
           value={search}
           className={`input-text ${value} ${dark && "dark"}`}
           onChange={(e) => setSearch(e.target.value)}

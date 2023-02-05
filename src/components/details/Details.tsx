@@ -11,7 +11,19 @@ export const Details = () => {
     theme: { dark, value },
     search: { data },
   } = useAppSelector((state: RootState) => state);
-  const { word, phonetic, phonetics, meanings, sourceUrls } = data[0];
+  const {
+    word,
+    phonetic,
+    phonetics = [
+      {
+        audio: "",
+      },
+    ],
+    meanings=[
+
+    ],
+    sourceUrls=[],
+  } = data[0];
   const audio = useMemo(
     () => phonetics.filter((item: any) => item.audio !== ""),
     [data]
