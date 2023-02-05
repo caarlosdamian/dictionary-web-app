@@ -1,3 +1,5 @@
+@import "../../tokens/index.scss";
+
 .meaning-container {
   width: 100%;
   display: flex;
@@ -15,6 +17,14 @@
       font-size: 18px;
       line-height: 22px;
       color: #2d2d2d;
+
+      @include for-size("tablet-portrait-up") {
+        font-size: 24px;
+        line-height: 25px;
+      }
+      @include for-size("desktop-up") {
+        line-height: 29px;
+      }
       &.dark {
         color: #ffffff;
       }
@@ -24,9 +34,8 @@
       height: 1px;
       flex: 6;
 
-      &.dark{
-        
-        background-color:#3A3A3A
+      &.dark {
+        background-color: #3a3a3a;
       }
     }
   }
@@ -41,6 +50,15 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
+
+      @include for-size("tablet-portrait-up") {
+        font-size: 20px;
+        line-height: 21px;
+      }
+
+      @include for-size("desktop-up") {
+        line-height: 26px;
+      }
     }
 
     &-list {
@@ -56,6 +74,10 @@
           font-size: 15px;
           line-height: 24px;
           color: #757575;
+          @include for-size("tablet-portrait-up") {
+            font-size: 18px;
+            line-height: 24px;
+          }
         }
         &-wrapper {
           display: flex;
@@ -81,6 +103,11 @@
             line-height: 24px;
             color: #2d2d2d;
 
+            @include for-size("tablet-portrait-up") {
+              font-size: 18px;
+              line-height: 24px;
+            }
+
             &.dark {
               color: white;
             }
@@ -102,6 +129,15 @@
       font-size: 16px;
       line-height: 19px;
       color: #757575;
+
+      @include for-size("tablet-portrait-up") {
+        font-size: 20px;
+        line-height: 21px;
+      }
+
+      @include for-size("desktop-up") {
+        line-height: 26px;
+      }
     }
 
     &-item {
@@ -109,6 +145,15 @@
       font-size: 16px;
       line-height: 19px;
       color: #a445ed;
+
+      @include for-size("tablet-portrait-up") {
+        font-size: 20px;
+        line-height: 21px;
+      }
+
+      @include for-size("desktop-up") {
+        line-height: 26px;
+      }
     }
   }
 }
