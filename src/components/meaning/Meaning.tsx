@@ -18,9 +18,9 @@ export const Meaning = ({ definitions, header, synonyms }: any) => {
         >
           {header}
         </span>
-        <div className={`meaning-container-top-line ${
-            dark ? "dark" : ""
-          }`}></div>
+        <div
+          className={`meaning-container-top-line ${dark ? "dark" : ""}`}
+        ></div>
       </div>
       <div className="meaning-container-bottom">
         <span className={`meaning-container-bottom-title ${value}`}>
@@ -49,7 +49,7 @@ export const Meaning = ({ definitions, header, synonyms }: any) => {
               (item: any) =>
                 item.example !== undefined && (
                   <span
-                  key={item.example}
+                    key={item.example}
                     className={`meaning-container-bottom-list-inner-example ${value}`}
                   >{`"${item.example}"`}</span>
                 )
@@ -63,7 +63,10 @@ export const Meaning = ({ definitions, header, synonyms }: any) => {
             Synonyms
           </span>
           {synonyms.map((item: any) => (
-            <span className={`meaning-container-synonyms-item ${value}`}>
+            <span
+              key={item}
+              className={`meaning-container-synonyms-item ${value}`}
+            >
               {item}
             </span>
           ))}

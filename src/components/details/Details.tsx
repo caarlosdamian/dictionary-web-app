@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import play from "../../assets/images/icon-play.svg";
@@ -12,8 +12,11 @@ export const Details = () => {
     search: { data },
   } = useAppSelector((state: RootState) => state);
   const { word, phonetic, phonetics, meanings, sourceUrls } = data[0];
-  const { audio } = phonetics[0];
-  const newAudio = new Audio(audio);
+  const audio = useMemo(
+    () => phonetics.filter((item: any) => item.audio !== ""),
+    [data]
+  );
+  const newAudio = new Audio(audio[0].audio);
 
   return (
     <div className="details-container">
