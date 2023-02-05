@@ -1,0 +1,124 @@
+.details-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  width: 100%;
+  gap: 34px;
+
+  .details-top-inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &-left {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 8px;
+
+      &-title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: #2d2d2d;
+
+        &.dark {
+          color: white;
+        }
+      }
+      &-subtitle {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #a445ed;
+      }
+    }
+    &-right {
+      .img-play {
+        height: 48px;
+        width: 48px;
+        object-fit: cover;
+      }
+    }
+  }
+  .details-middle-inner-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    &-top {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      &-title {
+        flex: 1;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #2d2d2d;
+        &.dark {
+          color: #ffffff;
+        }
+      }
+      &-line {
+        background-color: #e9e9e9;
+        height: 1px;
+        flex: 6;
+      }
+    }
+    &-bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 18px;
+      &-title {
+        color: #757575;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        &-inner {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            width: 100%;
+
+            &-circle {
+              &-inner {
+                width: 5px !important;
+                height: 5px !important;
+                border-radius: 50%;
+                background: #8f19e8;
+              }
+            }
+            &-item {
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 24px;
+              color: #2d2d2d;
+
+              &.dark {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
