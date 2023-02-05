@@ -3,6 +3,7 @@ import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import play from "../../assets/images/icon-play.svg";
 import "./Details.scss";
+import { Meaning } from "../meaning/Meaning";
 
 export const Details = () => {
   const {
@@ -39,17 +40,17 @@ export const Details = () => {
         </div>
       </div>
       <div className="details-middle-inner-container">
-        <div className="details-middle-inner-container-top">
+        <div className="details-middle-inner-container-top"> // this will be on the meaning component 
           <span
             className={`details-middle-inner-container-top-title ${value} ${
               dark ? "dark" : ""
             }`}
           >
-            noun
+            noun 
           </span>
           <div className="details-middle-inner-container-top-line"></div>
         </div>
-        <div className="details-middle-inner-container-bottom">
+        {/* <div className="details-middle-inner-container-bottom">
           <span
             className={`details-middle-inner-container-bottom-title ${value}`}
           >
@@ -76,9 +77,18 @@ export const Details = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <Meaning definitions={definitions} />
       </div>
-      <div className="details-bottom-inner-container"></div>
+
+      <div className="details-mid-bottom-inner-container">
+        <div className="details-mid-bottom-inner-container-top">
+          <span className="details-mid-bottom-inner-container-title"></span>
+          <span className="details-mid-bottom-inner-container-subtitle"></span>
+        </div>
+        <div className="details-mid-bottom-inner-container-bottom"></div>
+      </div>
       <div className="details-bottom-inner-container"></div>
     </div>
   );

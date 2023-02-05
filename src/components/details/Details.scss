@@ -71,54 +71,6 @@
         flex: 6;
       }
     }
-    &-bottom {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
-      gap: 18px;
-      &-title {
-        color: #757575;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-      }
 
-      &-list {
-        display: flex;
-        flex-direction: column;
-        &-inner {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-          &-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
-            width: 100%;
-
-            &-circle {
-              &-inner {
-                width: 5px !important;
-                height: 5px !important;
-                border-radius: 50%;
-                background: #8f19e8;
-              }
-            }
-            &-item {
-              font-weight: 400;
-              font-size: 15px;
-              line-height: 24px;
-              color: #2d2d2d;
-
-              &.dark {
-                color: white;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
