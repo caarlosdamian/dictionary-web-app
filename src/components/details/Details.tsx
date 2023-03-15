@@ -19,16 +19,16 @@ export const Details = () => {
         audio: "",
       },
     ],
-    meanings=[
-
-    ],
-    sourceUrls=[],
+    meanings = [],
+    sourceUrls = [],
   } = data[0];
   const audio = useMemo(
     () => phonetics.filter((item: any) => item.audio !== ""),
     [data]
   );
-  const newAudio = new Audio(audio[0].audio);
+
+  let newAudio: HTMLAudioElement;
+  if (audio) newAudio = new Audio(audio[0]?.audio);
 
   return (
     <div className="details-container">
@@ -48,7 +48,9 @@ export const Details = () => {
         <div className="details-top-inner-container-right">
           <img
             src={play}
-            onClick={() => newAudio.play()}
+            onClick={() => {
+              newAudio && newAudio.play();
+            }}
             alt="play"
             className="img-play"
           />
