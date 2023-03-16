@@ -27,8 +27,7 @@ export const Details = () => {
     [data]
   );
 
-  let newAudio: HTMLAudioElement;
-  if (audio) newAudio = new Audio(audio[0]?.audio);
+  const newAudio: HTMLAudioElement = audio && new Audio(audio[0]?.audio);
 
   return (
     <div className="details-container">
@@ -48,9 +47,7 @@ export const Details = () => {
         <div className="details-top-inner-container-right">
           <img
             src={play}
-            onClick={() => {
-              newAudio && newAudio.play();
-            }}
+            onClick={() => newAudio.play()}
             alt="play"
             className="img-play"
           />

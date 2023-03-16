@@ -62,7 +62,7 @@ export const Meaning = ({ definitions, header, synonyms }: any) => {
           <span className={`meaning-container-synonyms-header ${value}`}>
             Synonyms
           </span>
-          {synonyms.map((item: any, index: any) => (
+          {synonyms.map((item: any, index: number) => (
             <span
               key={index}
               className={`meaning-container-synonyms-item ${value}`}
